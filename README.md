@@ -63,7 +63,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|nill: false|
+|body|text||
 |image|string||
 |user_id|refarences|nill :false, foreign_key: true|
 |group_id|refarences|nill :false, foreign_key: true|
