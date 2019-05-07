@@ -73,11 +73,3 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :group
 
-## imageテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|url|string|null: false|
-|message_id|integer|nill: false, foreign_key: true|
-|user_id|integer|nill: false, foreign_key: true|
-|group_id|integer|nill: false, foreign_key: true|
