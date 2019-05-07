@@ -27,7 +27,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, unipue: true|
+|name|string|null: false, unipue: true, add_index|
 |email|string|null: false, unique: true|
 
 ### Association
