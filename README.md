@@ -59,13 +59,6 @@ Things you may want to cover:
 - belongs_to :group
 - belongs_to :user
 
-## emailテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|email|string|null: false|
-|user_id|integer|nill: false, foreign_key: true|
-
 ## messageテーブル
 
 |Column|Type|Options|
