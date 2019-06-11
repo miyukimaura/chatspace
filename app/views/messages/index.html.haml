@@ -1,49 +1,56 @@
-!!!
-%html{lang:  "ja"}
-  %head
-    %link{ :rel => "stylesheet", :href => "https://use.fontawesome.com/releases/v5.8.2/css/all.css", :integrity => "sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay", :crossorigin => "anonymous" }
-    %meta{charset:  "utf-8"}
-  %body
-    .var-side
-      .var-side__user-name
-        まな
-        .user-name__create-group-btn
-          %link{ :href => "", :type => ""}
-      .var-side__group-list
-        %ul.group-list__groups
-          %li.group-list__group
-            .group__name
-              まなのグループ
-            .group__message
-              こんにちは！
-          %li.group-list__group
-            .group__name
-              あなたのグループ
-            .group__massage
-              さようなら！
-    .main-contents
-      .main-contents__header
-        .header__group-name
-          まなのグループ
-        .header__group-member
-          member:まな
-        .header__group-edit-btn
-          %input{ :name => "submit", :value => "edit"}
-      .main-contents__message
-        %ul.main-contents__messages
-          %li.mein-contents__message-box
-            .message-box__user-name
-              まな
-            .message-box__date
-              2019/05/11 18:00
-            .message-box__text
-              こんにちは！
-      .main-contents__bottom
-        .bottom__message-box
-          %form{ :id => "new-message", :method => "post"}
-          %input{ :name => "text", :sizr => "80", :value => "type a message", :placeholder => "type a message", :type => "text"}
-            .message-box__add-image-btn
-        .bottom__message-send-btn
-          %input{ :type => "submit", :value => "send"}
+.wrapper
 
+  = render 'shared/side_bar'
 
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          グループ名
+        %ul.left-header__members
+          Member：
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+      .right-header
+        .right-header__button
+          Edit
+    .messages
+      .message
+        .upper-message
+          .upper-message__user-name
+            メンバー
+          .upper-message__date
+            2017/04/04
+        .lower-meesage
+          .lower-message__content
+            メッセージ
+      .message
+        .upper-message
+          .upper-message__user-name
+            メンバー
+          .upper-message__date
+            2017/04/04
+        .lower-meesage
+          .lower-message__content
+            メッセージ
+      .message
+        .upper-message
+          .upper-message__user-name
+            メンバー
+          .upper-message__date
+            2017/04/04
+        .lower-meesage
+          .lower-message__content
+            メッセージ
+    .form
+      %form
+        .form__message
+          %input.message-box{type: 'text', value: 'type a message'}
+          %label.image-label
+            = fa_icon 'picture-o', class: 'icon'
+            %input.hidden{type: 'file'}
+          %input.form__submit{type: 'submit', value: 'Send'}
