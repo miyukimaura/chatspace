@@ -68,33 +68,32 @@
     box-sizing: border-box;
     height: 90px;
     padding: 20px 40px;
-    &__message {
-      height: 50px;
-      width: calc(100%);
-      position: relative;
-      display: inline-block;
-      .message-box {
+      &__message {
         height: 50px;
-        width: calc(100% - 120px);
-        padding: 0 10px;
+        width: 100%;
+        position: relative;
+        display: inline-block;
+          &-box {
+            height: 50px;
+            width: calc(100% - 120px);
+            padding: 0 10px;
+          }
+          .image-label {
+            top: 15px;
+            right: 110px;
+            position: absolute;
+              .hidden {
+                display: none;
+              }
+          }
+          &__submit {
+            height: 50px;
+            margin-left: 15px;
+            background-color: $light_blue;
+            color: $white;
+            padding: 0 15px;
+          }
       }
-      .image-label {
-        top: 15px;
-        right: 110px;
-        position: absolute;
-        .hidden {
-          display: none;
-        }
-      }
-      .form__submit {
-        height: 50px;
-        margin-left: 15px;
-        background-color: $light_blue;
-        color: $white;
-        padding: 0 15px;
-
-      }
-      }
-    }
   }
+}
 
