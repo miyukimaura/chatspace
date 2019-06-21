@@ -1,23 +1,24 @@
 $(function() {
 
-  function buildHTML(message){
+  function buildHTML(params){
     var html = '<div class="message">
-                  <div class="upper-message">
-                    <div class="upper-message__user-name">
-                      ${message.}miyuki
-                      </div>
-                      <div class="upper-message__date">
-                      ${message.}2019/06/21 05:49
-                      </div>
-                    </div>
-                    <div class="lower-meesage">
-                      <div class="lower-message__content"></div>
-                        ${message.}aaaaaa
-                    </div>
-                </div>'
+    <div class="upper-message">
+    <div class="upper-message__user-name">
+    miyuki
+    </div>
+    <div class="upper-message__date">
+    2019/06/21 05:49
+    </div>
+    </div>
+    <div class="lower-meesage">
+    <div class="lower-message__content"></div>
+    aaaaaa
+    
+    </div>
+    </div>
     return html;
   }
-  $('.form').on('submit', function(e) {
+  $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
@@ -29,10 +30,11 @@ $(function() {
       processData: false,
       contentType: false
     })
-    .done(function(message) {
-      var html = buildHTML(message);
+    .done(function(params) {
+      var html = buildHTML(params);
       $('.messages').append(html);
       $('.form__message-box').val('')
+      $('.form__message__submit').removeAttr('data-disable-with')
 
     })
     .fail(function() {
