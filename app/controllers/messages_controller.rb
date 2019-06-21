@@ -9,9 +9,10 @@ class MessagesController < ApplicationController
   def create
     @message = @group.messages.new(message_params)
     respond_to do |format|
-      format.html { redirect_to message_path(params[:message_id]) }
+      format.html { redirect_to message_params }
       format.json
     end
+
   end
 
   private
