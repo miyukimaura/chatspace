@@ -1,36 +1,24 @@
 $(function() {
 
   function buildHTML (params){
-    var html = `<div class="message" data-message_id="4611">
-<div class="upper-message">
-<p class="upper-message__user-name"></p>
-${params.name}
-<p class="upper-message__date"></p>
-${params.created_at}
-</div>
-<div class="lower-message">
-<p class="lower-message__content"></p>
-${params.content}
-<img src="${params.image}">
-</div>`
-    return html;
-  }
-
-  <div class="message">
+    var html = `<div class="message">
 <div class="upper-message">
 <div class="upper-message__user-name">
-@@@
+${params.name}
 </div>
 <div class="upper-message__date">
-2019/06/21 12:36
+${params.created_at}
 </div>
 </div>
 <div class="lower-meesage">
 <div class="lower-message__content"></div>
-a
+${params.content}
+<img src="${params.image}"></img>
+</div>
+</div>`
+    return html;
+  }
 
-</div>
-</div>
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
