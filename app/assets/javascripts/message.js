@@ -1,6 +1,8 @@
 $(function() {
 
   function buildHTML (params){
+    var addImage = (params.image)? `<img class = "lower-message__image" src="${params.image}"></img>` : '';
+    
     var html = `<div class="message">
 <div class="upper-message">
 <div class="upper-message__user-name">
@@ -13,8 +15,8 @@ ${params.created_at}
 <div class="lower-meesage">
 <div class="lower-message__content"></div>
 ${params.content}
-<img src="${params.image}"></img>
-</div>
+${addImage}
+
 </div>`
     return html;
   }
@@ -33,9 +35,12 @@ ${params.content}
     })
     .done(function(params) {
       var html = buildHTML(params);
+
       $('.messages').append(html);
-      $('#new_message').val('');
-      $("form__message__submit").removeAttr("disabled");
+      
+      $(".form__message__submit").removeAttr("disabled");
+      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+      $("#new_message")[0].reset();
     })
     .fail(function() {
       alert('エラー')
