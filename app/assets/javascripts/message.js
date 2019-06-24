@@ -47,3 +47,26 @@ ${addImage}
     })
   })
 });
+
+
+
+var reloadMessages = function() {
+  //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
+  last_message_id = ※※※
+  $.ajax({
+    //ルーティングで設定した通りのURLを指定
+    url: ※※※,
+    //ルーティングで設定した通りhttpメソッドをgetに指定
+    type: 'GET',
+    dataType: 'json',
+    //dataオプションでリクエストに値を含める
+    data: {id: last_message_id}
+  })
+  .done(function(messages) {
+    console.log('success');
+  })
+  .fail(function() {
+    console.log('error');
+  });
+};
+});
