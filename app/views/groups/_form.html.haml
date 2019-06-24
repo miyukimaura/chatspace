@@ -7,13 +7,11 @@
           %li= message
   .chat-group-form__field
     .chat-group-form__field--left
-      = f.label :name, class: 'chat-group-form__label'
+      = f.label :name,"グループ名", class: 'chat-group-form__label'
 
     .chat-group-form__field--right
       = f.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'
   .chat-group-form__field.clearfix
-    / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
-
     .chat-group-form__field--left
       %label.chat-group-form__label{:for => "chat_group_チャットメンバーを追加"} チャットメンバーを追加
     .chat-group-form__field--right
@@ -26,13 +24,23 @@
       %label.chat-group-form__label チャットメンバー
     .chat-group-form__field--right
       #chat-group-users
-      #chat-group-user-22.chat-group-user.clearfix
-        = f.hidden_field :user_ids, value: current_user.id, multiple: true
-        /%input{:name => "chat_group[user_ids][]", :type => "hidden", :value => "22"}/
-        /%p.chat-group-user__name seo_kyohei
-      #member-search-result
-
+        .chat-group-user.clearfix
+          #chat-group-user.chat-group-user.clearfix.js-chat-member
+            %input{:name => "group[user_ids][]", :type => "hidden", :value=>current_user.id}/
+            %p.chat-group-user__name
+              = current_user.name
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
-      = f.submit class: 'chat-group-form__action-btn'
+      = f.submit class: 'chat-group-form__action-btn',value:'登録する'
+
+
+
+
+
+
+
+
+
+
+
