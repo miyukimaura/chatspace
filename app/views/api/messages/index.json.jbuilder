@@ -4,4 +4,5 @@ json.array! @messages do |message|
   json.content    message.content
   json.image      message.image.url
   json.id         message.id
+  json.group_id   message.group.id
 end
