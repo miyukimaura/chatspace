@@ -37,7 +37,7 @@ $(function() {
       $(".form__message__submit").removeAttr("disabled");
       $("#new_message")[0].reset();
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-      console.log("a");
+
     })
     .fail(function() {
       alert('エラー')
@@ -47,13 +47,10 @@ $(function() {
 
 $(function() {  
   var reloadMessages = function() {
-    console.log("b");
-    console.log(location.href)
     if (location.pathname.match(/\/groups\/\d+\/messages/)){
       
       var last_message_id = $('.message').last().data('id');
       var group_id = $('.left-header__title').data('group-id');
-    console.log("d")
 
       $.ajax({
         url: `/groups/${group_id}/api/messages`,
@@ -67,7 +64,6 @@ $(function() {
             insertHTML += buildHTML(message);
             $('.messages').append(insertHTML);
             $('.messages').animate({ scrollTop:  $('.messages')[0].scrollHeight});
-            console.log("c");
           })
         })
       .fail(function() {
