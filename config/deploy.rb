@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "3.11.0"
+lock "~> 3.11.0"
 
 set :application, "chatspace"
 set :repo_url, "git@example.com:miyukimaura/chatspace.git"
@@ -47,7 +47,7 @@ set :rbenv_ruby, '2.5.1'
 
 
 # どの公開鍵を利用してデプロイするか
-set :ssh_options, auth_methods: ['13.114.5.211'],
+set :ssh_options, auth_methods: ['publickey'],
                   keys: ['~/.ssh/MiyukiMaura.pem']
 
 # プロセス番号を記載したファイルの場所
