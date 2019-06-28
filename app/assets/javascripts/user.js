@@ -1,6 +1,3 @@
-$(document).on('turbolinks:load', function(){
-  //初回読み込み、リロード、ペジー切り替えで動く。遷移の旅に呼び出される。
-
 $(function() {
   var user_list = $("#user-search-result");
   function appendUser(user){
@@ -62,5 +59,5 @@ $(function() {
     });
   });
 });
-});
+
 

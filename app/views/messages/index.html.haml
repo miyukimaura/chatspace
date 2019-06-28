@@ -12,8 +12,7 @@
               = user.name
       .right-header
         .right-header__button
-          edit
-          //= link_to "edit", edit_group_path(@group)
+          = link_to "edit", edit_group_path(@group)
     .messages
       = render @messages
     .form
