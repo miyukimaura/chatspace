@@ -57,6 +57,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'erb2haml'
 gem 'font-awesome-rails'
+gem 'fog-aws'
 
 group :production do
   gem 'unicorn', '5.4.1'
@@ -70,12 +71,3 @@ group :development, :test do
   gem 'capistrano3-unicorn'
 end
 
-group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-end
-gem 'carrierwave'
-gem 'fog-aws'
