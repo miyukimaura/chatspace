@@ -43,7 +43,8 @@ $(function() {
     })
     .fail(function() {
       alert('ユーザー検索に失敗しました');
-    });
+    })
+  });
 
 
   $(document).on("click", ".user-search-add", function () {
@@ -51,13 +52,14 @@ $(function() {
       var user_id = $(this).data('user-id');
       var user_name = $(this).data('user-name');
       addUser(user_id,user_name);
+      console.log(user_id,user_name)
       $(this).parent().remove();
-    });
+  });
+
 
     $(document).on("click", ".chat-group-user__btn--remove", function () {
       $(this).parent().remove();
     });
-  });
-});
+  })
 
-
+  
